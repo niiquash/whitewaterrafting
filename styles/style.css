@@ -1,0 +1,227 @@
+/* The star symbol '*' means 'everything, every element'
+ I used this to remove all margin and padding from the html elements.
+ This allows me to manipulate margins and paddings myself */
+ @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Roboto:wght@300&display=swap');
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ body {
+  font-family: Roboto, sans-serif;
+ }
+
+ #content {
+  margin: 0 200px;
+ }
+
+/* I prefer using classes instead of IDs, except I want to overwrite
+    a specific style. So most of my elements are targeted using class names 
+*/
+
+/* Since the <a> and <nav> are sibling elements in the <header>, I can target the 
+   header using className="home-header". I can then use 'display: flex' to position
+   the sibling elements horizontally. I can then do the same for all the <a>
+   elements in the <nav> and position those horizontally as well, as so on.
+*/
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+  padding: 12px;
+}
+
+/* Making the logo smaller */
+.logo-link {
+  width: 100px;
+}
+
+.logo-link .logo {
+  width: 100%;
+}
+
+/* Making the navigation space out next to the logo */
+.nav-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-right: 100px;
+  font-size: larger;
+  font-weight: bolder;
+  transition: all .05s;
+}
+
+/* To hover over the nav links and get an effect, use :hover */
+.nav-container a:hover {
+  color: yellow;
+  transform: scale(1.2);
+}
+
+/* Hero image */
+/* So from what I see in the html and the wireframe, the text should be on the
+   banner/hero image. For this I'll use the position attribute.
+*/
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-box {
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.hero-msg {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  line-height: 5rem;
+  font-size: 2rem;
+  top: 5%;
+  left: 33%;
+}
+
+.home-title,
+.home-subtitle {
+    text-shadow: 0 0 10px #000;
+}
+
+/* It's better to use a <button> tag instead of a <div> with an
+   <a> tag in it. But with what we have, I will make do with it.
+   This is for the call to action button on the hero image.
+*/
+.button-box {
+  background-color: rgba(173, 255, 47, 0.5);
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.button-box .book {
+  text-decoration: none;
+  display: block;
+  color:white;
+}
+
+.button-box .book:hover {
+  background-color: rgba(173, 255, 47);
+  border-radius: 8px;
+  color: black;
+}
+
+/* Main content
+   This has three events with each event having an emage, a heading
+   or label and an icon. I will use grid here, cuz its easier to manipulate.
+*/
+.rivers-camping-rapids {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
+  margin-bottom: 50px;
+}
+
+/* To reduce the size of the images, I need to reduce the sizes of
+   their containers.
+*/
+.rivers-card,
+.camping-card,
+.rapids-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 88px;
+  margin: 0 auto;
+
+}
+
+.card-img {
+  width: 100%;
+}
+
+.msg {
+  width: 100%;
+  position: relative
+}
+
+/* This part is for the join us portion of the page. */
+.join-us-background {
+  /* position: relative; */
+  background-color: grey;
+  width: 100%;
+  height: 600px;
+
+}
+
+.mountains {
+  width: 66%;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+}
+
+.join-us-aside h2 {
+  margin-bottom: 16px;
+}
+
+.join-us-aside {
+  color: white;
+  background-color: rgb(58, 57, 57);
+  position: absolute;
+  width: 40%;
+  padding: 30px;
+  line-height: 1.5rem;
+  top: 25%;
+  left: 55%;
+}
+
+.join-us-aside p {
+  margin-bottom: 20px;
+}
+
+.join-us-aside .join {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.05s;
+}
+
+.join-us-aside .join:hover {
+  background-color: rgb(190, 188, 188);
+}
+
+/* Finally the footer */
+.home-footer {
+  background-color: rgb(231, 231, 231);
+  font-weight: bolder;
+  margin-top: 48px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
